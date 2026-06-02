@@ -1,0 +1,70 @@
+/**
+ * tokens.css — single source of truth for the design system.
+ * Extracted from the reference: AI-Driven Fitness App (Dribbble #26738539).
+ * Warm light mode, charcoal sidebar, coral-red accent.
+ * Components must consume these via Tailwind theme keys, never raw hex.
+ */
+:root {
+  /* ── Canvas & Backgrounds ── */
+  --color-canvas: #edecea; /* outer page bg — warm greige */
+  --color-bg: #f4f2f0; /* main app container bg — warm off-white */
+  --color-surface: #ffffff; /* card/panel surface — pure white */
+  --color-surface-raised: #ffffff; /* elevated cards — pure white + shadow */
+  --color-surface-dark: #2e2c2c; /* dark card (e.g. distance card) */
+  --color-sidebar: #4a4848; /* sidebar background — warm charcoal */
+  --color-sidebar-active: #ffffff; /* active nav item circle/badge */
+
+  /* ── Primary Accent — Coral Red ── */
+  --color-accent: #e8552a; /* primary coral-red/tomato */
+  --color-accent-hover: #d44820; /* darker hover state */
+  --color-accent-soft: rgba(232, 85, 42, 0.12); /* soft tint for backgrounds */
+  --color-accent-softer: rgba(232, 85, 42, 0.06); /* very soft glow */
+
+  /* ── Text ── */
+  --color-text-primary: #1a1918; /* near-black — headings, bold values */
+  --color-text-secondary: #6b6966; /* medium gray — labels, captions */
+  --color-text-tertiary: #a09c99; /* light gray — timestamps, placeholders */
+  --color-text-inverse: #ffffff; /* white text on dark/accent backgrounds */
+  --color-text-sidebar: rgba(255, 255, 255, 0.85); /* sidebar nav labels */
+
+  /* ── Borders & Dividers ── */
+  --color-border: rgba(0, 0, 0, 0.06); /* card borders — barely visible */
+  --color-border-medium: rgba(0, 0, 0, 0.1); /* slightly visible dividers */
+  --color-border-input: rgba(0, 0, 0, 0.08); /* input field border */
+
+  /* ── Data Visualization ── */
+  --color-chart-primary: #e8552a; /* exercise/primary arc — coral */
+  --color-chart-secondary: #1a1918; /* stand/secondary arc — near-black */
+  --color-chart-track: #e8e6e4; /* ring/bar background track */
+  --color-chart-bar-active: #1a1918; /* active bar in bar chart */
+  --color-chart-bar-muted: #d4d0cd; /* inactive bars */
+
+  /* ── Shadows ── */
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-raised: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-sidebar: 2px 0 16px rgba(0, 0, 0, 0.12);
+
+  /* ── Border Radius ── */
+  --radius-xs: 8px; /* small elements, tags */
+  --radius-sm: 12px; /* input fields, small cards, segmented controls */
+  --radius-md: 16px; /* standard cards, panels */
+  --radius-lg: 24px; /* large cards, main containers */
+  --radius-xl: 32px; /* app container, sidebar */
+  --radius-pill: 100px; /* buttons, chatbot pill badge, nav active state */
+
+  /* ── Spacing (4px base grid — mirrors Tailwind's default scale) ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ── Typography ── */
+  /* --font-jakarta is injected by next/font in layout.tsx */
+  --font-sans: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}

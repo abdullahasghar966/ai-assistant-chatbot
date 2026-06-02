@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Coral focus ring on every keyboard-focused interactive element. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  /* Mouse users who click don't get the ring; keyboard users do. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* Thin, warm-toned scrollbar. */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.14);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* Streaming-cursor blink + skeleton shimmer (also exposed via Tailwind animate-*). */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-chart-track) 25%,
+    #f0edea 50%,
+    var(--color-chart-track) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* Honour the OS reduced-motion preference globally as a safety net;
+   components also branch on useReducedMotion() for finer control. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* react-markdown code highlighting surface (used in AI messages). */
+.markdown-body pre {
+  background: var(--color-bg);
+  border-radius: var(--radius-xs);
+  padding: 12px 14px;
+  overflow-x: auto;
+  font-size: 13px;
+}
+.markdown-body code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+}
+.markdown-body :not(pre) > code {
+  background: var(--color-accent-softer);
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+.markdown-body p {
+  margin: 0;
+}
+.markdown-body p + p {
+  margin-top: 8px;
+}
+.markdown-body ul,
+.markdown-body ol {
+  margin: 4px 0;
+  padding-left: 18px;
+}
+.markdown-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
