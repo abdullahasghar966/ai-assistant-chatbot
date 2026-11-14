@@ -1,5 +1,7 @@
 # AI Assistant
 
+**🔗 Live site:** [ai-assistant-chatbot-dusky.vercel.app](https://ai-assistant-chatbot-dusky.vercel.app) — demo mode (mock assistant) until an AI key is added
+
 A warm light-mode, general-purpose AI chatbot. The chat is the primary surface, paired
 with a live **Insights panel** that derives a summary, a you-vs-AI message split,
 recent-activity bars, and topic themes purely from your conversation. Coral-red accent,
